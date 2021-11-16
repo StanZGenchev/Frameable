@@ -1,0 +1,9 @@
+# folders
+dist/
+.settings/
+.idea
+
+# files
+.DS_Store
+.project
+*~

@@ -1,0 +1,55 @@
+:root {
+  --frameable-resizer-color: #464646;
+  --frameable-resizer-highlight-color: #3072c2;
+  --frameable-resizer-size: 1px;
+  --frameable-resizer-highlight-size: 2px;
+}
+.frameable-cw {
+  /* Frameable Content Window */
+  position: absolute;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.frameable-cw * {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.frameable-dpe > *:not(.frameable-resizer) {
+  /* Frameable Disable Pointer Events */
+  pointer-events: none;
+}
+.frameable-cw > iframe {
+  width: 100%;
+  height: 100%;
+}
+.frameable-right iframe {
+  border-left: var(--frameable-resizer-size) solid var(--frameable-resizer-color);
+}
+.frameable-bottom iframe {
+  border-top: var(--frameable-resizer-size) solid var(--frameable-resizer-color);
+}
+.frameable-resizer {
+  position: absolute;
+  z-index: 100;
+  background-color: var(--frameable-resizer-color);
+}
+.frameable-resizer.active {
+  background-color: var(--frameable-resizer-highlight-color);
+  border: var(--frameable-resizer-highlight-size) solid var(--frameable-resizer-highlight-color);
+}
+.frameable-resizer:hover {
+  background-color: var(--frameable-resizer-highlight-color);
+  border: var(--frameable-resizer-highlight-size) solid var(--frameable-resizer-highlight-color);
+}
+.frameable-resizer.v-resizer {
+  cursor: ns-resize;
+  height: var(--frameable-resizer-size);
+}
+.frameable-resizer.h-resizer {
+  cursor: ew-resize;
+  width: var(--frameable-resizer-size);
+}

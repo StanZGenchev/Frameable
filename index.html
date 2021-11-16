@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="frameable-style.css" />
+    <title>Frameable Demo</title>
+
+    <script type="text/javascript" src="frameable.js"></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let resizerConfig = {
+          thickness: 3,
+          highlightThickness: 0,
+        };
+        let framesConfig = [
+          {
+            position: "frameable-left",
+            size: 0.15,
+            url: "page.html",
+            data: "left",
+          },
+          {
+            position: "frameable-right",
+            children: [
+              {
+                position: "frameable-top",
+                size: 0.8,
+                url: "page.html",
+                data: "top right",
+              },
+              {
+                position: "frameable-bottom",
+                url: "page.html",
+                data: "bottom right",
+              },
+            ],
+          },
+        ];
+        Frameable.initialise("main", framesConfig, resizerConfig);
+        // Frameable.initialise("main", framesConfig);
+      });
+    </script>
+  </body>
+</html>
