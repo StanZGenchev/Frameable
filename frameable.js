@@ -57,7 +57,7 @@ Frameable.initialise = function (containerId, framesConfig, resizerConfig = {}) 
 Frameable.generateFrames = function (parent, framesConfig) {
   for (let i = 0; i < framesConfig.length; i++) {
     let node = document.createElement("div");
-    node.classList.add(framesConfig[i].position);
+    node.classList.add(`frameable-${framesConfig[i].position}`);
     if ('url' in framesConfig[i]) {
       let iframe = document.createElement("iframe");
       iframe.src = framesConfig[i].url;

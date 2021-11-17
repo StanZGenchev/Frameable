@@ -4,7 +4,7 @@ Frameable is a simple iframe layout engine written in JavaScript.
 
 ## Why an iframe layout?
 
-When you have a big web application, a good idea is to break it down into different views and isolate those views into their own iframe. The aim is to make the app more modular, easier to maintain and prevent small changes breaking the UI of whole app.
+When you have a big web application, it's a good idea to break it down into different views and isolate those views into their own iframe. The aim is to make the app more modular, easier to maintain and prevent small changes breaking the UI of the whole app.
 
 ## Is there a demo?
 
@@ -27,7 +27,7 @@ Then you need to create an HTML element that will contain the different frames. 
 
 Then create a layout config. It's a list of frame objects. Frame objects have 4 keys:
 
-- `position` - The position of the frame. There are four option available: `frameable-top`, `frameable-left`, `frameable-bottom`, `frameable-right`
+- `position` - The position of the frame. There are four option available: `top`, `left`, `bottom`, `right`
 - `size` - The relative size of the frame. Biggest value is 1.0, smallest is 0.1
 - `url` - The url that will be loaded by the iframe
 - `data` - In case you want to pass data to the iframe, you can use this which will be translated to a custom attribute, applied to the iframe itself. Then you can use standard JS functions to get the data. See `page.html` to see an example.
@@ -42,22 +42,22 @@ Here is a full example:
 ```javascript
 let framesConfig = [
   {
-    position: "frameable-left",
+    position: "left",
     size: 0.15,
     url: "page.html",
     data: "left",
   },
   {
-    position: "frameable-right",
+    position: "right",
     children: [
       {
-        position: "frameable-top",
+        position: "top",
         size: 0.8,
         url: "page.html",
         data: "top right",
       },
       {
-        position: "frameable-bottom",
+        position: "bottom",
         url: "page.html",
         data: "bottom right",
       },
